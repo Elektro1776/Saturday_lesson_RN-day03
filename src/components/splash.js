@@ -16,22 +16,11 @@ class Splash extends Component {
 
   }
   componentDidMount() {
-    console.log(' Did mount!');
-    const self = this;
     this.transitionOne = setTimeout(() => {
-      self.props.navigator.navigation.navigate('Home');
+      this.props.navigator.navigation.navigate('Home');
     }, 2000);
   }
 
-  componentWillReceiveProps(newProps) {
-    console.log(' WHAT IS THE NEW PROPS', newProps);
-    console.log(' WHAT ARE THE OLD PROPS', this.props);
-
-  }
-  componentWillUnmount() {
-    console.log(' UNMOUNTED!');
-    clearTimeout(this.transitionOne);
-  }
   render() {
     return (
       <View style={styles.container}>

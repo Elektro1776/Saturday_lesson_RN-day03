@@ -49,7 +49,6 @@ class Movie extends Component {
       @const params <Object> The movie name passed from the Home screen component
     */
     const { params } = this.props.navigation.state;
-
     if (!this.state.loading) {
       return (
         <View style={styles.container}>

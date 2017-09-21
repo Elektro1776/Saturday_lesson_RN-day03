@@ -23,7 +23,14 @@ const styles = StyleSheet.create({
     color: '#444',
   }
 });
-
+/**
+ NOTE: There are two ways to render a Scene.
+  1.  Either by declaring the screen as a method that gets passed the navigation
+      object and returns a Component.
+  2.  Or by making the screen a noramal property that has the Imported Component
+      simply as its value.
+  This is important in how you access the navigation object in your other screens
+*/
 const MasterNavigator = StackNavigator({
   Splash: {
     screen: (navigation) => <Splash navigator={navigation} />,
@@ -36,8 +43,8 @@ const MasterNavigator = StackNavigator({
       headerLeft:(
           <Button
             onPress={() => navigation.navigate('Splash')}
-            style={{ backgroundColor: 'rgba(76,217,175,1)' }}
-            title={'Splash'}
+            color='rgba(76,217,175,1)'
+            title='Splash'
           />
         ),
     })
@@ -45,8 +52,8 @@ const MasterNavigator = StackNavigator({
   Movie: {
     screen: Movie,
     navigationOptions: {
-      title: 'Movie'
-    }
+      title: 'Movie',
+    },
   },
 });
 
